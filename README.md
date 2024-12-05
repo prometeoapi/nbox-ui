@@ -51,3 +51,10 @@ This template comes with [Tailwind CSS](https://tailwindcss.com/) already config
 - [ ] alert to add / update / delete
 - [ ] variables usadas
 - [ ] enable delete. mostrar todos los servicios q usan la variable 
+
+
+## run on docker
+```shell
+docker build -f Dockerfile -t nbox-ui:runner --target runner .
+docker run --network host -e COOKIE_SECRET=1234567890plmnhytgvfredcxswqaz -e BASE_URL=http://127.0.0.1:7337 -p 3000:3000 -it nbox-ui:runner
+```
