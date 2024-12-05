@@ -83,10 +83,11 @@ export default function Entry() {
 
         const errors: string[] = []
         for (const [k, v] of Object.entries(actionData?.errors || {})) {
-            errors.push( `${k}: ${v}`)
+            errors.push(`${k}: ${v}`)
         }
 
-        if (errors.length >=0){
+
+        if (errors.length > 0){
             toast({
                 variant: "destructive",
                 title: `Errors`,
