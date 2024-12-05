@@ -1,18 +1,20 @@
+import {requireAuthCookie} from "~/adapters/auth";
+import {LoaderFunctionArgs} from "@remix-run/node";
+
+export async function loader({request}: LoaderFunctionArgs){
+    return await requireAuthCookie(request)
+}
+
 
 export default function Index() {
   return (
-      <div className="flex flex-col dark:bg-slate-800">
-        <div className="bg-blue-500 text-white text-center py-4">
-          Top Section
-        </div>
-        <div className="flex flex-col md:flex-row">
-          <div className="w-full md:w-1/2 bg-blue-500 text-white text-center py-4">
-            Left Column
-          </div>
-          <div className="w-full md:w-1/2 bg-gray-200 text-center py-4">
-            Right Column
-          </div>
-        </div>
+      <div className="h-[90vh] flex flex-col items-center justify-center">
+          <h1 className="text-5xl font-bold">
+              Welcome to the nbox!
+          </h1>
+          <p className="text-xl text-amber-500">
+              templates | environments vars | secrets
+          </p>
       </div>
   );
 }
